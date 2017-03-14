@@ -8,7 +8,7 @@ var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/bookInventory';
 var collection = MongoClient.connect(url, {
     bufferMaxEntries: 0
 }).then(function(db) {
-    return db.collection('books');
+    return db.collection('books__MR');
 });
 
 var findAll = function() {
