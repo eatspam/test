@@ -1,8 +1,7 @@
 /**
  * Created by mradojewski on 13.03.2017.
  */
-var MongoClient = require('mongodb').MongoClient
-    , assert = require('assert');
+var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 
 // Connection URL
 var url = 'mongodb://localhost:27017/bookInvetory';
