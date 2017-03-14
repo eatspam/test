@@ -2,7 +2,7 @@
  * Created by mradojewski on 13.03.2017.
  */
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/bookInventory';
+var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/bookInventory';
 
 
 var collection = MongoClient.connect(url, {
