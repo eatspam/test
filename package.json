@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/bookInventory.js",
   "scripts": {
-    "start": "./src/bookInventory.js",
+    "start": "node ./src/bookInventory.js",
     "test": "mocha",
     "lint": "jshint --exclude=node_modules/** src",
     "test:xunit": "npm run test -- --reporter xunit"
