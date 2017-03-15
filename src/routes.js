@@ -19,7 +19,22 @@ module.exports = function(bookRepository) {
         getStock:  function (req, res, next) {
             bookRepository.getStock(req.params.isbn).then(function (doc) {
                 if (doc) {
-                    res.send(200, doc.count);
+                    res.format({
+
+                        'text/html': function(){
+                            res.send('<p>items left' + doc.count + '</p>');
+                        },
+
+                        'application/json': function() {
+                            res.send(200, doc.count);
+                        },
+
+                        'default': function() {
+                            // log the request and respond with 406
+                            res.status(406).send('Not Acceptable');
+                        }
+                    });
+
                 } else {
                     res.status(404).send('item not found');
                 }
